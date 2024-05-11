@@ -1,30 +1,28 @@
-// 페이지가 로드될 때 실행되는 함수
-function initialize() {
-    const paragraphs = document.querySelectorAll('p');
-    const dot = document.querySelector('.dot');
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function() {
+        const text = document.querySelector(".text");
+        const dot = document.querySelector(".dot");
 
-    function handleClick(event) {
-        paragraphs.forEach((paragraph, index) => {
-            paragraph.style.transition = `transform 1s, opacity 1s`; // 애니메이션 속도 설정
-            paragraph.style.transform = 'translateY(100px)'; // 아래로 슬라이드
-            paragraph.style.opacity = 0; // 투명도 설정
+        // 텍스트 요소들을 숨기기 위해 투명도를 0으로 설정하고, 그룹으로 아래로 내리기
+        text.style.opacity = 0;
+        text.style.transition = "opacity 1s ease-in-out";
+        setTimeout(function() {
+            text.style.display = "none";
+        }, 1000);
+
+        // 빨간 작은 원을 커서 위치로 이동시키고 나타내기
+        dot.style.display = "block";
+        moveDot(event.clientX, event.clientY);
+        
+        // 커서가 움직일 때마다 빨간 작은 원을 따라다니게 함
+        document.addEventListener("mousemove", function(event) {
+            moveDot(event.clientX, event.clientY);
         });
-        dot.style.transition = 'opacity 1s, top 1s'; // 애니메이션 속도 설정
-        dot.style.opacity = 1; // 투명도 설정
-        dot.style.top = '0'; // 화면 상단으로 이동
-    }
+    });
+});
 
-    function handleMouseMove(event) {
-        dot.style.transition = 'top 0.1s, left 0.1s'; // 애니메이션 속도 설정
-        dot.style.top = `${event.clientY}px`; // 마우스 Y 좌표로 이동
-        dot.style.left = `${event.clientX}px`; // 마우스 X 좌표로 이동
-    }
-
-    // <p> 요소의 애니메이션 종료 이벤트를 감지하여 handleClick 함수를 호출합니다.
-    document.querySelector('.text').addEventListener('transitionend', handleClick);
-
-    document.addEventListener('mousemove', handleMouseMove); // 마우스 이동 이벤트 리스너 추가
+function moveDot(x, y) {
+    const dot = document.querySelector(".dot");
+    dot.style.left = x + "px";
+    dot.style.top = y + "px";
 }
-
-// DOMContentLoaded 이벤트가 발생하면 initialize 함수를 실행합니다.
-document.addEventListener('DOMContentLoaded', initialize);
