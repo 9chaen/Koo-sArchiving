@@ -11,7 +11,13 @@ body {
     font-style: normal;
 }
 body {
-    font-family: 'Gill Sans MT Bold', sans-serif;
+    font-family: 'Gill Sans MT Bold', serif;
+    color: #000000;
+}
+
+#description {
+    font-family: 'Gill Sans MT Bold', serif;
+    color: #000000;
 }
 
 .container {
