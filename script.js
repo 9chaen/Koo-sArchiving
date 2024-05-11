@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dot = document.querySelector('.dot');
     const paragraphs = textContainer.querySelectorAll('p');
 
-    textContainer.addEventListener('click', function() {
+    textContainer.addEventListener('click', function(event) { // 이벤트 객체를 받아와야 합니다.
         paragraphs.forEach((paragraph, index) => {
             paragraph.style.transform = `translateY(${(index + 1) * 20}px)`; // 그룹으로 아래로 내려가는 애니메이션
             paragraph.style.opacity = 0; // 투명도 설정
