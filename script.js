@@ -1,28 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.body.addEventListener("click", function() {
-        const text = document.querySelector(".text");
+        const text = document.querySelectorAll(".text p");
         const dot = document.querySelector(".dot");
 
-        // 텍스트 요소들을 숨기기 위해 투명도를 0으로 설정하고, 그룹으로 아래로 내리기
-        text.style.opacity = 0;
-        text.style.transition = "opacity 1s ease-in-out";
-        setTimeout(function() {
-            text.style.display = "none";
-        }, 1000);
-
-        // 빨간 작은 원을 커서 위치로 이동시키고 나타내기
-        dot.style.display = "block";
-        moveDot(event.clientX, event.clientY);
-        
-        // 커서가 움직일 때마다 빨간 작은 원을 따라다니게 함
-        document.addEventListener("mousemove", function(event) {
-            moveDot(event.clientX, event.clientY);
+        // 텍스트 요소들이 아래로 내려가면서 투명해지도록 설정
+        text.forEach((p, index) => {
+            p.style.opacity = 0;
+            p.style.transform = "translateY(50px)"; // 초기 위치 설정
+            p.style.transitionDelay = index * 0.5 + "s"; // 딜레이 적용
         });
+
+        // 빨간 점이 나타나고 커서를 향해 움직이도록 설정
+        setTimeout(function() {
+            dot.style.opacity = 1; // 투명도를 1로 설정하여 나타나도록 함
+            dot.style.transform = "translateY(0)"; // 위로 이동하는 애니메이션 적용
+            moveDot(event.clientX, event.clientY);
+            document.addEventListener("mousemove", function(event) {
+                moveDot(event.clientX, event.clientY);
+            });
+        }, text.length * 500); // 텍스트가 모두 사라진 후 실행되도록 딜레이 설정
     });
 });
-
-function moveDot(x, y) {
-    const dot = document.querySelector(".dot");
-    dot.style.left = x + "px";
-    dot.style.top = y + "px";
-}
