@@ -40,8 +40,8 @@ body {
 
 .dot {
     position: fixed;
-    width: 20vw;
-    height: 20vh;
+    width: 500px;
+    height: 500px;
     background-color: rgb(255, 0, 0); /* 빨간 작은 원 설정 */
     border-radius: 50%;
     pointer-events: none; /* 커서 이벤트 무시 */
