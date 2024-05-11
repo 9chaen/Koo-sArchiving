@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // 텍스트 요소들이 아래로 내려가면서 투명해지도록 설정
         text.forEach((p, index) => {
             p.style.opacity = 0;
-            p.style.transform = "translateY(50px)"; // 초기 위치 설정
+            p.style.transform = "translateY(0)"; // 초기 위치 설정
             p.style.transitionDelay = index * 0.5 + "s"; // 딜레이 적용
         });
 
@@ -18,6 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
             document.addEventListener("mousemove", function(event) {
                 moveDot(event.clientX, event.clientY);
             });
-        }, text.length * 500); // 텍스트가 모두 사라진 후 실행되도록 딜레이 설정
+        }, text.length * 500 + 1000); // 텍스트가 모두 사라진 후 실행되도록 딜레이 설정
     });
 });
