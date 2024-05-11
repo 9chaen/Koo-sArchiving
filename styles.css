@@ -5,13 +5,13 @@ body {
 }
 
 @font-face {
-    font-family: 'Calibri';
-    src: url('calibri.ttf') format('truetype');
+    font-family: 'Gill Sans MT Bold';
+    src: url('Gill Sans MT Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 body {
-    font-family: 'Calibri', sans-serif;
+    font-family: 'Gill Sans MT Bold', sans-serif;
 }
 
 .container {
