@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     const paragraphs = document.querySelectorAll('p');
     const dot = document.querySelector('.dot');
 
@@ -24,3 +24,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('mousemove', handleMouseMove); // 마우스 이동 이벤트 리스너 추가
 });
+
