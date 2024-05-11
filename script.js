@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             paragraph.style.opacity = 0;
         });
 
-        setTimeout(() => {
+        setTimeout(function() => {
             dot.style.display = 'block'; // 빨간 작은 원 표시
             dot.style.top = `${event.clientY}px`; // 마우스 Y 좌표에 따라 위치 설정
             dot.style.left = `${event.clientX}px`; // 마우스 X 좌표에 따라 위치 설정
