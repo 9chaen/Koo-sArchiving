@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fff; /* 흰색 배경색 설정 */
-    font-family: Arial, sans-serif; /* 폰트 설정 */
+    font-family: calibri.ttf, sans-serif; /* 폰트 설정 */
 }
 
 .container {
