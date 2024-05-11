@@ -10,6 +10,10 @@ body {
     font-weight: normal;
     font-style: normal;
 }
+body {
+    font-family: 'Calibri', sans-serif;
+}
+
 .container {
     display: flex;
     justify-content: center;
