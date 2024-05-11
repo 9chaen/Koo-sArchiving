@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const textContainer = document.querySelector('.text');
+    const body = document.body; // body 요소를 가져옵니다.
     const dot = document.querySelector('.dot');
-    const paragraphs = textContainer.querySelectorAll('p');
+    const paragraphs = document.querySelectorAll('.text p'); // 모든 p 요소를 가져옵니다.
 
-    textContainer.addEventListener('click', function(event) { // 이벤트 객체를 받아와야 합니다.
+    body.addEventListener('click', function(event) { // body 요소에 클릭 이벤트를 추가합니다.
         paragraphs.forEach((paragraph, index) => {
             paragraph.style.transform = `translateY(${(index + 1) * 20}px)`; // 그룹으로 아래로 내려가는 애니메이션
             paragraph.style.opacity = 0; // 투명도 설정
