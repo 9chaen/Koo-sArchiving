@@ -40,11 +40,10 @@ body {
 
 .dot {
     position: fixed;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 0, 0, 0); /* 초기에는 완전 투명 설정 */
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 0, 0); /* 빨간 작은 원 설정 */
     border-radius: 50%;
-    pointer-events: none;
-    transition: opacity 0.5s ease, transform 1s ease; /* 투명도와 위치 전환 효과 설정 */
-    transform: translateY(100vh); /* 초기 위치 설정: 화면 밑부터 시작 */
+    pointer-events: none; /* 커서 이벤트 무시 */
+    display: none; /* 초기에는 숨김 */
 }
