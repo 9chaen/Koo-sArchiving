@@ -13,11 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
         // 빨간 작은 원을 커서 위치로 이동시키고 나타내기
         dot.style.display = "block";
         moveDot(event.clientX, event.clientY);
-
-         // 텍스트 요소들을 그룹으로 아래로 내리면서 투명도를 조절하여 사라지게 함
-        text.style.transition = "opacity 2s, transform 2s"; // 애니메이션 효과 설정
-        text.style.opacity = 0;
-        text.style.transform = "translateY(100vh)"; // 화면 아래로 이동
         
         // 커서가 움직일 때마다 빨간 작은 원을 따라다니게 함
         document.addEventListener("mousemove", function(event) {
