@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const body = document.body; // body 요소를 가져옵니다.
     const dot = document.querySelector('.dot');
-    const paragraphs = document.querySelectorAll('.text p'); // 모든 p 요소를 가져옵니다.
+    const paragraphs = document.querySelectorAll('p');
 
-    body.addEventListener('click', function(event) { // body 요소에 클릭 이벤트를 추가합니다.
+    document.addEventListener('click', function() {
         paragraphs.forEach((paragraph, index) => {
-            paragraph.style.transform = `translateY(${(index + 1) * 20}px)`; // 그룹으로 아래로 내려가는 애니메이션
-            paragraph.style.opacity = 0; // 투명도 설정
+           paragraph.style.transition = `transform 0.5s ease ${index * 0.1}s, opacity 0.5s ease ${index * 0.1}s`;
+            paragraph.style.transform = 'translateY(20px)';
+            paragraph.style.opacity = 0;
         });
 
         setTimeout(() => {
