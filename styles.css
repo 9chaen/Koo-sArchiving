@@ -39,5 +39,5 @@ body {
     background-color: rgb(255, 0, 0); /* 빨간 작은 원 색상 설정 */
     border-radius: 50%;
     z-index: 9999;
-    display: none; /* 초기에는 숨김 */
+    opacity: 0; /* 초기에는 투명도 0으로 설정 */
 }
