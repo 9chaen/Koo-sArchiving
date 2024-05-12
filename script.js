@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function moveDot(x, y) {
     const dot = document.querySelector(".dot");
+    const dotX = x; // 커서의 X 좌표를 가져와 dotX에 할당
+    const dotY = y; // 커서의 Y 좌표를 가져와 dotY에 할당
    dot.style.left = (dotX - 20) + "px";
 dot.style.top = (dotY + 20) + "px";
 }
