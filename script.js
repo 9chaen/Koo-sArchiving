@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function() {
             heading.style.transition = "opacity 2s ease-in-out";
 
             // Click me again! 표시
-            const clickAgain = document.createElement("div");
-            clickAgain.textContent = "Click me again!";
-            clickAgain.classList.add("click-again");
+            const click-again = document.createElement("div");
+            click-again.textContent = "Click me again!";
+            click-again.classList.add("click-again");
             document.body.appendChild(clickAgain);
         }
     });
