@@ -22,17 +22,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // 첫 번째 클릭 시에도 마우스 이동 이벤트 추가
             document.addEventListener("mousemove", moveDotHandler);
+            isFirstClick = false; // 첫 번째 클릭 상태 해제
+            isSecondClick = true; // 두 번째 클릭 상태 설정
         } else if (isSecondClick) { // 두 번째 클릭 이후
             dot.style.display = "block";
             dot.style.left = (event.clientX - 20) + "px"; // 점의 가로 위치 조정
             dot.style.top = (event.clientY - 20) + "px"; // 점의 세로 위치 조정
 
+            // 마우스 이동 이벤트 제거
+            document.removeEventListener("mousemove", moveDotHandler);
+            
             // h1 요소 서서히 나타내기
             heading.style.opacity = 1;
             heading.style.transition = "opacity 2s ease-in-out";
-
-            // 마우스 이동 이벤트 제거
-            document.removeEventListener("mousemove", moveDotHandler);
         }
     });
 
