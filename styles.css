@@ -6,7 +6,7 @@ body {
 
 @font-face {
     font-family: 'Arial Black', sans-serif; 
-    font-weight: bold; /* 폰트 굵기 설정 */
+    font-weight: normal; /* 폰트 굵기 설정 */
     font-style: normal; /* 폰트 스타일 설정 */
 }
 
