@@ -6,7 +6,7 @@ body {
 
 @font-face {
     font-family: 'Gill Sans';
-    src: url('Gill Sans MT Bold.ttf') format('truetype');
+    src: url('Gill Sans MT Bold.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
