@@ -31,13 +31,6 @@ h1 {
     height: 100vh;
 }
 
-.text-group {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .text {
     text-align: center;
 }
