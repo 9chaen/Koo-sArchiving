@@ -5,18 +5,18 @@ body {
 }
 
 @font-face {
-    font-family: 'consola';
+    font-family: 'consolas';
     src: url('consola.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 body {
-    font-family: 'consola', serif;
+    font-family: 'consolas', serif;
     color: #000000;
 }
 
 #description {
-    font-family: 'consola', serif;
+    font-family: 'consolas', serif;
     color: #000000;
 }
 
