@@ -5,18 +5,18 @@ body {
 }
 
 @font-face {
-    font-family: 'consolas';
-    src: url('consola.ttf') format('truetype');
+    font-family: 'arial', san serif;
+    src: url('arialbd.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 body {
-    font-family: 'consolas', serif;
+    font-family: 'arial', san serif;
     color: #000000;
 }
 
 #description {
-    font-family: 'consolas', serif;
+    font-family: 'arial', san serif;
     color: #000000;
 }
 
