@@ -47,6 +47,14 @@ h1 {
 .text p:nth-child(3) { animation: fadeIn 2s 6s forwards; }
 .text p:nth-child(4) { animation: fadeIn 2s 8s forwards; }
 
+.text-group {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
