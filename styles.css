@@ -5,16 +5,18 @@ body {
 }
 
 @font-face {
-    font-family: 'arial', san serif;
+    font-family: 'Arial', san serif;
     src: url('arialbd.ttf') format('truetype')
+    font-weight: bold;
+    font-style: bold;
 }
 body {
-    font-family: 'arial', san serif;
+    font-family: 'Arial', san serif;
     color: #000000;
 }
 
 #description {
-    font-family: 'arial', san serif;
+    font-family: 'Arial', san serif;
     color: #000000;
 }
 
