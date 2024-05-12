@@ -23,11 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function moveDot(x, y) {
     const dot = document.querySelector(".dot");
-    const dotSize = 40; // 점의 크기
+    const cursorWidth = 1; // 커서의 뾰족한 끝의 폭
+    const cursorHeight = 1; // 커서의 뾰족한 끝의 높이
 
-    // 점의 왼쪽 상단 모서리가 커서 위치의 중앙에 오도록 좌표를 계산
-    const dotX = x - (dotSize / 2);
-    const dotY = y - (dotSize / 2);
+    // 점의 중앙에 커서의 뾰족한 끝이 위치하도록 좌표를 계산
+    const dotX = x - (cursorWidth / 2);
+    const dotY = y - (cursorHeight / 2);
 
     dot.style.left = dotX + "px";
     dot.style.top = dotY + "px";
