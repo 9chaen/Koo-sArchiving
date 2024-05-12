@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function moveDot(x, y) {
     const dot = document.querySelector(".dot");
-    dot.style.left = x - 20px;
-    dot.style.top = y + 20px;
+    dot.style.left = dotX - 20px;
+    dot.style.top = dotY + 20px;
 }
