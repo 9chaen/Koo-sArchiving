@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let isClicked = false; // 클릭 여부를 나타내는 변수 추가
+    let isFirstClick = true; // 첫 번째 클릭 여부를 나타내는 변수 추가
     let dot = document.querySelector(".dot");
+    let heading = document.querySelector("h1"); // h1 요소 선택
+    heading.style.opacity = 0; // 초기에는 h1이 숨겨져 있도록 설정
 
     document.body.addEventListener("click", function(event) {
-        if (!isClicked) { // 클릭되지 않은 상태일 때
+        if (isFirstClick) { // 첫 번째 클릭일 때
             const text = document.querySelector(".text");
 
             // 텍스트 요소들을 숨기기 위해 투명도를 0으로 설정하고, 그룹으로 아래로 내리기
@@ -13,15 +15,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 text.style.display = "none";
             }, 1000);
 
+            isFirstClick = false; // 첫 번째 클릭 여부 변경
+
             // 빨간 작은 원을 커서 위치로 이동시키고 나타내기
             dot.style.display = "block";
             moveDot(event.clientX, event.clientY); // 이벤트 객체의 좌표 전달
-
-            isClicked = true; // 클릭되었음을 나타내는 변수 변경
-        } else { // 클릭된 상태일 때
+        } else { // 두 번째 클릭일 때
             dot.style.display = "block";
             dot.style.left = (event.clientX - 20) + "px"; // 점의 가로 위치 조정
             dot.style.top = (event.clientY - 20) + "px"; // 점의 세로 위치 조정
+
+            // h1 요소 서서히 나타내기
+            heading.style.opacity = 1;
+            heading.style.transition = "opacity 2s ease-in-out";
         }
     });
 });
