@@ -27,5 +27,5 @@ function moveDot(x, y) {
     const dotY = y; // 커서의 Y 좌표를 가져와 dotY에 할당
 
     dot.style.left = (dotX - 20) + "px"; // 점의 가로 위치 조정
-    dot.style.top = (dotY + 20) + "px"; // 점의 세로 위치 조정
+    dot.style.top = (dotY + 60) + "px"; // 점의 세로 위치 조정
 }
