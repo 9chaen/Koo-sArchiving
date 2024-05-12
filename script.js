@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 text.style.display = "none";
             }, 1000);
 
-            isFirstClick = false; // 첫 번째 클릭 여부 변경
-
             // 빨간 작은 원을 커서 위치로 이동시키고 나타내기
             dot.style.display = "block";
             moveDot(event.clientX, event.clientY); // 이벤트 객체의 좌표 전달
