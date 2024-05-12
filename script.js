@@ -35,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
             // h1 요소 서서히 나타내기
             heading.style.opacity = 1;
             heading.style.transition = "opacity 2s ease-in-out";
+
+            // Click me again! 표시
+            const clickAgain = document.createElement("div");
+            clickAgain.textContent = "Click me again!";
+            clickAgain.classList.add("click-again");
+            document.body.appendChild(clickAgain);
         }
     });
 
