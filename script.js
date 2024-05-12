@@ -23,14 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function moveDot(x, y) {
     const dot = document.querySelector(".dot");
-    const dotSize = 40; // 점의 크기
-
-    // 점의 중심을 커서의 뾰족한 끝에 위치하도록 좌표를 계산
-    const dotX = x - (dotSize / 2);
-    const dotY = y - (dotSize / 2);
-
-    dot.style.left = dotX + "px";
-    dot.style.top = dotY + "px";
-}
-
+    dot.style.left = x + "px";
+    dot.style.top = y + "px";
 }
