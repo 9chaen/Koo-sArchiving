@@ -6,9 +6,7 @@ body {
 
 @font-face {
     font-family: 'arial', san serif;
-    src: url('arialbd.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('arialbd.ttf') format('truetype')
 }
 body {
     font-family: 'arial', san serif;
