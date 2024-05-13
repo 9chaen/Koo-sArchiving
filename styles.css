@@ -47,6 +47,12 @@ h1 {
     margin: 45px; /* 상하좌우 여백 45px */
 }
 
+.text-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
 .text {
     text-align: center;
 }
