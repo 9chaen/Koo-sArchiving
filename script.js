@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function() {
     let isSecondClick = false;
     let isThirdClick = false;
     let isFourthClick = false;
-    let isFifthClick = false; // 다섯 번째 클릭 여부를 나타내는 변수 추가
+    let isFifthClick = false;
     let dot = document.querySelector(".dot");
     let heading = document.querySelector("h1");
     let clickAgain;
     let illustration;
-    let graphicDesign; // Graphic Design 요소 변수 추가
+    let graphicDesign;
     heading.style.opacity = 0;
 
     document.body.addEventListener("click", function(event) {
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const availableHeight = viewportHeight - marginTop - marginBottom;
         const distance = Math.sqrt((randomLeft - (dotLeft + dotRight) / 2) ** 2 + (randomTop - (dotTop + dotBottom) / 2) ** 2);
         if (distance < 40 || distance > 100 || randomLeft < marginLeft || randomLeft > marginLeft + availableWidth || randomTop < marginTop || randomTop > marginTop + availableHeight) {
-        createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom);
+            createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom);
         } else {
             graphicDesign.style.left = randomLeft + "px";
             graphicDesign.style.top = randomTop + "px";
