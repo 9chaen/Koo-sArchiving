@@ -63,6 +63,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+     // 배경 클릭 시 아무런 동작도 일어나지 않도록 처리
+    document.body.addEventListener("click", function(event) {
+        if (isThirdClick) {
+            event.stopPropagation(); // 이벤트 전파 중지
+        }
+    });
 
     function moveDotHandler(event) {
         moveDot(event.clientX, event.clientY); // 이벤트 객체의 좌표 전달
