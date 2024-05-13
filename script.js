@@ -53,12 +53,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 createIllustration(dotRect.left, dotRect.right, dotRect.top, dotRect.bottom);
                 isFourthClick = true;
             }
-     } else if (isFourthClick && !isFifthClick) { // 다섯 번째 클릭인 경우
+     } else if (isFourthClick && !isFifthClick) {
         const dotRect = dot.getBoundingClientRect();
         const clickX = event.clientX;
         const clickY = event.clientY;
         if (clickX >= dotRect.left && clickX <= dotRect.right && clickY >= dotRect.top && clickY <= dotRect.bottom) {
-            console.log("Clicked on Dot");
             createGraphicDesign(dotRect.left, dotRect.right, dotRect.top, dotRect.bottom);
             isFifthClick = true; // 다섯 번째 클릭 상태 설정
         }
