@@ -46,14 +46,6 @@ h1 {
     margin: 45px; /* 상하좌우 여백 45px */
 }
 
-.text-group {
-    position: fixed;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .text {
     text-align: center;
 }
@@ -69,3 +61,15 @@ h1 {
 .text p:nth-child(2) { animation: fadeIn 2s 4s forwards; }
 .text p:nth-child(3) { animation: fadeIn 2s 6s forwards; }
 .text p:nth-child(4) { animation: fadeIn 2s 8s forwards; }
+
+.text-group {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
