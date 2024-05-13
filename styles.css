@@ -49,9 +49,8 @@ h1 {
 
 .text-group {
     position: fixed;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
 }
 
         }
