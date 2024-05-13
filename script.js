@@ -42,14 +42,14 @@ document.addEventListener("DOMContentLoaded", function() {
                         clickAgain.style.opacity = 1;
                     }, 100);
                     isThirdClick = true;
-                    // Illustration 생성 및 랜덤한 위치에 표시
-                    createIllustration(dotRect.left, dotRect.right, dotRect.top, dotRect.bottom);
                 } else if (isThirdClick) {
                     const dotRect = dot.getBoundingClientRect();
                     const clickX = event.clientX;
                     const clickY = event.clientY;
                     if (clickX >= dotRect.left && clickX <= dotRect.right && clickY >= dotRect.top && clickY <= dotRect.bottom) {
                         // 빨간 점 영역 내에서 클릭한 경우에만 동작할 코드 추가
+                        // Illustration 생성 및 랜덤한 위치에 표시
+                        createIllustration(dotRect.left, dotRect.right, dotRect.top, dotRect.bottom);
                     }
                 }
             });
