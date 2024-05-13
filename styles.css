@@ -54,7 +54,7 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-.clickAgain {
+.click-again {
     position: absolute;
     display: none;
     font-size: 24px;
@@ -65,7 +65,7 @@ h1 {
     transition: opacity 1s ease-in-out; /* 투명도 전환 효과 설정 */
 }
 
-.clickAgain.show {
+.click-again.show {
     display: block;
     opacity: 1;
 }
