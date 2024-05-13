@@ -10,20 +10,6 @@
             font-size: 36px;
             margin-left: 45px;
         }
-        .group {
-            position: fixed;
-            top: 0;
-            left: 45px; /* 왼쪽 여백 설정 */
-            right: 45px; /* 오른쪽 여백 설정 */
-            display: flex;
-            align-items: center;
-        }
-        .dot {
-            width: 40px;
-            height: 40px;
-            background-color: rgb(255, 0, 0); /* 빨간 작은 원 설정 */
-            border-radius: 50%;
-        }
         .click-again {
             position: absolute;
             display: none;
@@ -31,14 +17,7 @@
             text-align: center;
             padding: 10px 20px;
             border-radius: 10px;
-            color: black;
-            margin-left: 5px; /* dot과의 간격 조정 */
-        }
-        .group.show {
-            display: flex;
-        }
-        .click-again.show {
-            display: block;
+            color: blcak;
         }
     </style>
 </head>
@@ -56,10 +35,9 @@
         </div>
     </div>
     
-    <div class="group">
-        <div class="dot"></div>
-        <div class="click-again">Click me again!</div>
-    </div>
+    <div class="dot"></div>
+    
+    <div class="click-again">Click me again!</div>
     
     <script src="script.js"></script>
 </body>
