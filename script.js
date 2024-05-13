@@ -105,34 +105,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    function createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom) {
-        if (graphicDesign) {
-            document.body.removeChild(graphicDesign);
-        }
-        graphicDesign = document.createElement("div");
-        graphicDesign.textContent = "Graphic Design";
-        graphicDesign.classList.add("graphic-design");
-        graphicDesign.style.opacity = 0;
-        document.body.appendChild(graphicDesign);
-        const randomLeft = Math.random() * (dotRight - dotLeft - 100) + dotLeft + 50;
-        const randomTop = Math.random() * (dotBottom - dotTop - 100) + dotTop + 50;
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const marginLeft = parseInt(getComputedStyle(document.body).marginLeft);
-        const marginRight = parseInt(getComputedStyle(document.body).marginRight);
-        const marginTop = parseInt(getComputedStyle(document.body).marginTop);
-        const marginBottom = parseInt(getComputedStyle(document.body).marginBottom);
-        const availableWidth = viewportWidth - marginLeft - marginRight;
-        const availableHeight = viewportHeight - marginTop - marginBottom;
-        const distance = Math.sqrt((randomLeft - (dotLeft + dotRight) / 2) ** 2 + (randomTop - (dotTop + dotBottom) / 2) ** 2);
-        if (distance < 40 || distance > 100 || randomLeft < marginLeft || randomLeft > marginLeft + availableWidth || randomTop < marginTop || randomTop > marginTop + availableHeight) {
-            createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom);
-        } else {
-            graphicDesign.style.left = randomLeft + "px";
-            graphicDesign.style.top = randomTop + "px";
-            setTimeout(function() {
-                graphicDesign.style.opacity = 1;
-            }, 100);
-        }
+   function createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom) {
+    if (graphicDesign) {
+        document.body.removeChild(graphicDesign);
     }
+    graphicDesign = document.createElement("div");
+    graphicDesign.textContent = "Graphic Design";
+    graphicDesign.classList.add("graphicDesign"); // 수정된 부분
+    graphicDesign.style.opacity = 0;
+    document.body.appendChild(graphicDesign);
+    const randomLeft = Math.random() * (dotRight - dotLeft - 100) + dotLeft + 50;
+    const randomTop = Math.random() * (dotBottom - dotTop - 100) + dotTop + 50;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const marginLeft = parseInt(getComputedStyle(document.body).marginLeft);
+    const marginRight = parseInt(getComputedStyle(document.body).marginRight);
+    const marginTop = parseInt(getComputedStyle(document.body).marginTop);
+    const marginBottom = parseInt(getComputedStyle(document.body).marginBottom);
+    const availableWidth = viewportWidth - marginLeft - marginRight;
+    const availableHeight = viewportHeight - marginTop - marginBottom;
+    const distance = Math.sqrt((randomLeft - (dotLeft + dotRight) / 2) ** 2 + (randomTop - (dotTop + dotBottom) / 2) ** 2);
+    if (distance < 40 || distance > 100 || randomLeft < marginLeft || randomLeft > marginLeft + availableWidth || randomTop < marginTop || randomTop > marginTop + availableHeight) {
+        createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom);
+    } else {
+        graphicDesign.style.left = randomLeft + "px";
+        graphicDesign.style.top = randomTop + "px";
+        setTimeout(function() {
+            graphicDesign.style.opacity = 1;
+        }, 100);
+    }
+}
 });
