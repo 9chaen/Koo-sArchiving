@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // 점의 위치를 기준으로 center로 정렬
             const dotRect = dot.getBoundingClientRect();
             clickAgain.style.left = (dotRect.left + (dotRect.width / 2) - (clickAgain.offsetWidth / 2)) + "px";
-            clickAgain.style.top = (dotRect.bottom + 10) + "px";
+            clickAgain.style.top = (dotRect.bottom + 4) + "px";
 
             // 투명에서 불투명하게 서서히 나타내기
             setTimeout(function() {
