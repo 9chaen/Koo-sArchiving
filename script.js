@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             clickAgain.textContent = "Click me again!";
             clickAgain.classList.add("click-again");
             clickAgain.style.opacity = 0;
-            clickAgain.style.transition = "opacity 1s ease-in-out";
+            clickAgain.style.transition = "opacity 2s ease-in-out";
             document.body.appendChild(clickAgain);
 
             // .clickAgain.show 클래스 추가
