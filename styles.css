@@ -60,7 +60,6 @@ h1 {
     font-size: 6px;
     text-align: center;
     padding: 5px 10px;
-    margin-left: 45px;
     border-radius: 10px;
     color: black;
     transition: opacity 1s ease-in-out; /* 투명도 전환 효과 설정 */
