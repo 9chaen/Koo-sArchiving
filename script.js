@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     graphicDesign = document.createElement("div");
     graphicDesign.textContent = "Graphic Design";
-    graphicDesign.classList.add("graphicDesign"); // 수정된 부분
+    graphicDesign.classList.add("graphic-design"); // 수정된 부분
     graphicDesign.style.opacity = 0;
     document.body.appendChild(graphicDesign);
     const randomLeft = Math.random() * (dotRight - dotLeft - 100) + dotLeft + 50;
