@@ -63,6 +63,28 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    } else if (isThirdClick) { // 세 번째 클릭 이후
+            // Illustration을 표시할 div 요소 생성
+            const illustrationDiv = document.createElement("div");
+            illustrationDiv.textContent = "Illustration";
+            illustrationDiv.classList.add("illustration");
+            
+            // 랜덤한 위치에 Illustration 표시
+            const randomX = Math.random() * (window.innerWidth - 140) + 70; // 가로 위치
+            const randomY = Math.random() * (window.innerHeight - 140) + 70; // 세로 위치
+            illustrationDiv.style.left = randomX + "px";
+            illustrationDiv.style.top = randomY + "px";
+
+            // 클릭 시 illustration.html로 이동
+            illustrationDiv.addEventListener("click", function() {
+                window.location.href = "illustration.html";
+            });
+
+            // body에 추가
+            document.body.appendChild(illustrationDiv);
+        }
+    });
+
      // 배경 클릭 시 아무런 동작도 일어나지 않도록 처리
     document.body.addEventListener("click", function(event) {
         if (isThirdClick) {
