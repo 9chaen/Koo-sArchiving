@@ -57,9 +57,9 @@ h1 {
 .click-again {
     position: absolute;
     display: none;
-    font-size: 10px;
+    font-size: 6px;
     text-align: center;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border-radius: 10px;
     color: black;
     transition: opacity 1s ease-in-out; /* 투명도 전환 효과 설정 */
