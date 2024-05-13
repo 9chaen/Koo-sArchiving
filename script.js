@@ -124,8 +124,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const marginBottom = parseInt(getComputedStyle(document.body).marginBottom);
         const availableWidth = viewportWidth - marginLeft - marginRight;
         const availableHeight = viewportHeight - marginTop - marginBottom;
-        if (randomLeft < marginLeft || randomLeft > marginLeft + availableWidth || randomTop < marginTop || randomTop > marginTop + availableHeight) {
-            createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom);
+        const distance = Math.sqrt((randomLeft - (dotLeft + dotRight) / 2) ** 2 + (randomTop - (dotTop + dotBottom) / 2) ** 2);
+        if (distance < 40 || distance > 100 || randomLeft < marginLeft || randomLeft > marginLeft + availableWidth || randomTop < marginTop || randomTop > marginTop + availableHeight) {
+        createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom);
         } else {
             graphicDesign.style.left = randomLeft + "px";
             graphicDesign.style.top = randomTop + "px";
