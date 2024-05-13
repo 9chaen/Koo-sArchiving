@@ -1,57 +1,26 @@
 body {
-    margin: 0;
+    margin: 45px;
     padding: 0;
     background-color: #fff; /* 흰색 배경색 설정 */
-}
-
-@font-face {
-    font-family: 'Arial Black', sans-serif; 
-    font-weight: normal; /* 폰트 굵기 설정 */
-    font-style: normal; /* 폰트 스타일 설정 */
-}
-
-body {
-    font-family: 'Arial Black', sans-serif;
-    color: #000000;
-}
-
-h1 {
-    font-family: 'Arial Black', sans-serif;
-}
-
-#description {
-    font-family: 'Arial Black', sans-serif;
-    color: #000000;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 90px); /* 상단 45px, 하단 45px 여백 제외한 높이 */
 }
 
-.text {
-    text-align: center;
-}
-
-.text p {
-    font-size: 16px; /* 글자 크기 설정 */
-    font-weight: 500; /* 폰트 두께 설정 */
-    opacity: 0; /* 초기 투명도 설정 */
-    transition: opacity 2s; /* 투명도 전환 효과 설정 */
-}
-
-.text p:nth-child(1) { animation: fadeIn 2s 2s forwards; }
-.text p:nth-child(2) { animation: fadeIn 2s 4s forwards; }
-.text p:nth-child(3) { animation: fadeIn 2s 6s forwards; }
-.text p:nth-child(4) { animation: fadeIn 2s 8s forwards; }
-
-.text-group {
+.dot {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 0, 0); /* 빨간 작은 원 설정 */
+    border-radius: 50%;
+    pointer-events: none; /* 커서 이벤트 무시 */
+    display: none; /* 초기에는 숨김 */
+    left: 45px; /* 좌측 여백 45px */
+    top: 45px; /* 상단 여백 45px */
 }
 
 .click-again {
@@ -68,20 +37,18 @@ h1 {
 .click-again.show {
     display: block;
     opacity: 1;
+    left: 45px; /* 좌측 여백 45px */
+    bottom: 45px; /* 하단 여백 45px */
 }
 
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+h1 {
+    font-size: 36px;
+    margin: 45px; /* 상하좌우 여백 45px */
 }
 
-.dot {
+.text-group {
     position: fixed;
-    width: 40px;
-    height: 40px;
-    background-color: rgb(255, 0, 0); /* 빨간 작은 원 설정 */
-    border-radius: 50%;
-    pointer-events: none; /* 커서 이벤트 무시 */
-    display: none; /* 초기에는 숨김 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
