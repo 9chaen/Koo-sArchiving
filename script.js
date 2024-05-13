@@ -74,4 +74,3 @@ function moveDot(x, y) {
     dot.style.left = (x - 20) + "px"; // 점의 가로 위치 조정
     dot.style.top = (y - 20) + "px"; // 점의 세로 위치 조정
 }
-
