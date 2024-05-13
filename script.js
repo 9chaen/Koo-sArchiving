@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(function() {
                 let clickAgain = document.createElement("div");
                 clickAgain.textContent = "Click me again!";
-                clickAgain.classList.add("click-again");
+                clickAgain.classList.add("clickAgain");
                 clickAgain.style.opacity = 0;
                 clickAgain.style.transition = "opacity 1s ease-in-out";
                 document.body.appendChild(clickAgain);
