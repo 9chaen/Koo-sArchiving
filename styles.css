@@ -65,7 +65,7 @@ h1 {
     transition: opacity 1s ease-in-out; /* 투명도 전환 효과 설정 */
 }
 
-.clickAagain.show {
+.clickAgain.show {
     display: block;
     opacity: 1;
 }
