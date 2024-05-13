@@ -2,11 +2,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let isFirstClick = true;
     let isSecondClick = false;
     let isThirdClick = false;
-    let isFourthClick = false; // 네 번째 클릭 여부를 나타내는 변수 추가
+    let isFourthClick = false;
     let dot = document.querySelector(".dot");
     let heading = document.querySelector("h1");
     let clickAgain;
     let illustration;
+    let graphicDesign;
+    let illustrationText;
     heading.style.opacity = 0;
 
     document.body.addEventListener("click", function(event) {
@@ -49,9 +51,11 @@ document.addEventListener("DOMContentLoaded", function() {
             const clickX = event.clientX;
             const clickY = event.clientY;
             if (clickX >= dotRect.left && clickX <= dotRect.right && clickY >= dotRect.top && clickY <= dotRect.bottom) {
-                // Illustration 생성 및 랜덤한 위치에 표시
                 createIllustration(dotRect.left, dotRect.right, dotRect.top, dotRect.bottom);
-                isFourthClick = true; // 네 번째 클릭 상태 설정
+                isFourthClick = true;
+            } else {
+                // Illustration 영역 외의 클릭인 경우 Graphic Design 표시
+                createGraphicDesign(dotRect.left, dotRect.right, dotRect.top, dotRect.bottom);
             }
         }
     });
@@ -75,10 +79,8 @@ document.addEventListener("DOMContentLoaded", function() {
         illustration.classList.add("illustration");
         illustration.style.opacity = 0;
         document.body.appendChild(illustration);
-        // Illustration의 랜덤한 위치 결정
         const randomLeft = Math.random() * (dotRight - dotLeft - 100) + dotLeft + 50;
         const randomTop = Math.random() * (dotBottom - dotTop - 100) + dotTop + 50;
-        // 뷰포트 크기에서 마진을 제외한 영역 구하기
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
         const marginLeft = parseInt(getComputedStyle(document.body).marginLeft);
@@ -87,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const marginBottom = parseInt(getComputedStyle(document.body).marginBottom);
         const availableWidth = viewportWidth - marginLeft - marginRight;
         const availableHeight = viewportHeight - marginTop - marginBottom;
-        // Illustration이 dot으로부터 최소 40px, 최대 100px 내에 위치하도록 함
         const distance = Math.sqrt((randomLeft - (dotLeft + dotRight) / 2) ** 2 + (randomTop - (dotTop + dotBottom) / 2) ** 2);
         if (distance < 40 || distance > 100 || randomLeft < marginLeft || randomLeft > marginLeft + availableWidth || randomTop < marginTop || randomTop > marginTop + availableHeight) {
             createIllustration(dotLeft, dotRight, dotTop, dotBottom);
@@ -96,6 +97,41 @@ document.addEventListener("DOMContentLoaded", function() {
             illustration.style.top = randomTop + "px";
             setTimeout(function() {
                 illustration.style.opacity = 1;
+            }, 100);
+            // Illustration 클릭 시 illustration.html 페이지로 이동
+            illustration.addEventListener("click", function() {
+                window.location.href = "illustration.html";
+            });
+        }
+    }
+
+    function createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom) {
+        if (graphicDesign) {
+            document.body.removeChild(graphicDesign);
+        }
+        graphicDesign = document.createElement("div");
+        graphicDesign.textContent = "Graphic Design";
+        graphicDesign.classList.add("graphic-design");
+        graphicDesign.style.opacity = 0;
+        document.body.appendChild(graphicDesign);
+        const randomLeft = Math.random() * (dotRight - dotLeft - 100) + dotLeft + 50;
+        const randomTop = Math.random() * (dotBottom - dotTop - 100) + dotTop + 50;
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const marginLeft = parseInt(getComputedStyle(document.body).marginLeft);
+        const marginRight = parseInt(getComputedStyle(document.body).marginRight);
+        const marginTop = parseInt(getComputedStyle(document.body).marginTop);
+        const marginBottom = parseInt(getComputedStyle(document.body).marginBottom);
+        const availableWidth = viewportWidth - marginLeft - marginRight;
+        const availableHeight = viewportHeight - marginTop - marginBottom;
+        const distance = Math.sqrt((randomLeft - (dotLeft + dotRight) / 2) ** 2 + (randomTop - (dotTop + dotBottom) / 2) ** 2);
+        if (distance < 40 || distance > 100 || randomLeft < marginLeft || randomLeft > marginLeft + availableWidth || randomTop < marginTop || randomTop > marginTop + availableHeight) {
+            createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom);
+        } else {
+            graphicDesign.style.left = randomLeft + "px";
+            graphicDesign.style.top = randomTop + "px";
+            setTimeout(function() {
+                graphicDesign.style.opacity = 1;
             }, 100);
         }
     }
