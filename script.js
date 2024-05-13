@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const availableHeight = viewportHeight - marginTop - marginBottom;
         // Illustration이 dot으로부터 최소 40px, 최대 100px 내에 위치하도록 함
         const distance = Math.sqrt((randomLeft - (dotLeft + dotRight) / 2) ** 2 + (randomTop - (dotTop + dotBottom) / 2) ** 2);
-        if (distance < 150 || distance > 300 || randomLeft < marginLeft || randomLeft > marginLeft + availableWidth || randomTop < marginTop || randomTop > marginTop + availableHeight) {
+        if (distance < 60 || distance > 120 || randomLeft < marginLeft || randomLeft > marginLeft + availableWidth || randomTop < marginTop || randomTop > marginTop + availableHeight) {
             createIllustration(dotLeft, dotRight, dotTop, dotBottom);
         } else {
             illustration.style.left = randomLeft + "px";
