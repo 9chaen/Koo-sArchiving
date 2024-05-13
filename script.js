@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // h1 요소 서서히 나타내기
             heading.style.opacity = 1;
             heading.style.transition = "opacity 2s ease-in-out";
-
+            
             // Click me again 문구 추가
             setTimeout(function() {
                 let clickAgain = document.createElement("div");
@@ -44,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 clickAgain.style.opacity = 0;
                 clickAgain.style.transition = "opacity 1s ease-in-out";
                 document.body.appendChild(clickAgain);
+
+                // .clickAgain.show 클래스 추가
+                clickAgain.classList.add("show");
 
                 // 점의 위치를 기준으로 center로 정렬
                 const dotRect = dot.getBoundingClientRect();
@@ -57,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 2000);
         }
     });
+
 
     function moveDotHandler(event) {
         moveDot(event.clientX, event.clientY); // 이벤트 객체의 좌표 전달
