@@ -1,8 +1,22 @@
+@font-face {
+    font-family: 'Sense Font';
+    src: url('SenseFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 45px 45px 90px 45px;
     padding: 0;
     background-color: #fff; /* 흰색 배경색 설정 */
     overflow: hidden; /* 스크롤 숨기기 */
+    font-family: 'Sense Font', sans-serif;
+    color: black;
+}
+
+#description {
+    font-family: 'Sense Font', sans-serif;
+    color: black;
 }
 
 .container {
