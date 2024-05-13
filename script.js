@@ -35,6 +35,26 @@ document.addEventListener("DOMContentLoaded", function() {
             // h1 요소 서서히 나타내기
             heading.style.opacity = 1;
             heading.style.transition = "opacity 2s ease-in-out";
+
+            // Click me again 문구 추가
+            setTimeout(function() {
+                let clickAgain = document.createElement("div");
+                clickAgain.textContent = "Click me again!";
+                clickAgain.classList.add("click-again");
+                clickAgain.style.opacity = 0;
+                clickAgain.style.transition = "opacity 1s ease-in-out";
+                document.body.appendChild(clickAgain);
+
+                // 점의 위치를 기준으로 center로 정렬
+                const dotRect = dot.getBoundingClientRect();
+                clickAgain.style.left = (dotRect.left + (dotRect.width / 2) - (clickAgain.offsetWidth / 2)) + "px";
+                clickAgain.style.top = (dotRect.bottom + 10) + "px";
+
+                // 투명에서 불투명하게 서서히 나타내기
+                setTimeout(function() {
+                    clickAgain.style.opacity = 1;
+                }, 100);
+            }, 2000);
         }
     });
 
