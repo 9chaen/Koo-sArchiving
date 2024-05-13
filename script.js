@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (clickX >= dotRect.left && clickX <= dotRect.right && clickY >= dotRect.top && clickY <= dotRect.bottom) {
             console.log("Clicked on Dot");
             createGraphicDesign(dotRect.left, dotRect.right, dotRect.top, dotRect.bottom);
-            isFourthClick = faulse;
             isFifthClick = true; // 다섯 번째 클릭 상태 설정
         }
     }
