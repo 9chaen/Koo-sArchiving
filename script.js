@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const clickX = event.clientX;
             const clickY = event.clientY;
             if (clickX >= dotRect.left && clickX <= dotRect.right && clickY >= dotRect.top && clickY <= dotRect.bottom) {
+                console.log("Clicked on Dot");
                 createGraphicDesign(dotRect.left, dotRect.right, dotRect.top, dotRect.bottom);
                 isFifthClick = true; // 다섯 번째 클릭 상태 설정
             }
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
    function createGraphicDesign(dotLeft, dotRight, dotTop, dotBottom) {
+       console.log("Creating Graphic Design");
     if (graphicDesign) {
         document.body.removeChild(graphicDesign);
     }
