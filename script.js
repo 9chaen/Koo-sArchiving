@@ -74,3 +74,18 @@ function moveDot(x, y) {
     dot.style.left = (x - 20) + "px"; // 점의 가로 위치 조정
     dot.style.top = (y - 20) + "px"; // 점의 세로 위치 조정
 }
+
+ document.querySelector('.dot').addEventListener('click', function() {
+        if (isThirdClick) {
+            const texts = document.querySelectorAll('.text');
+            texts.forEach(text => {
+                const x = Math.floor(Math.random() * (window.innerWidth - 200)) + 50;
+                const y = Math.floor(Math.random() * (window.innerHeight - 200)) + 50;
+                text.style.left = x + 'px';
+                text.style.top = y + 'px';
+                text.style.display = 'block';
+            });
+            this.removeEventListener('click', arguments.callee);
+        }
+    });
+});
