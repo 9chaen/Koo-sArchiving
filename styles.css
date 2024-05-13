@@ -28,7 +28,7 @@ body {
             display: none;
             font-size: 10px;
             text-align: center;
-            padding: 6px 10px;
+            padding: 10px 10px;
             border-radius: 10px;
             color: black;
             transition: opacity 1s ease-in-out; /* 투명도 전환 효과 설정 */
